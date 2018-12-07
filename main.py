@@ -1,3 +1,5 @@
+import test
+
 f = int(open('INPUT.txt', 'r').read())
 string = ''
 sumAllNumbers = 0
@@ -10,3 +12,4 @@ if sumAllNumbers > 0:
 
 the_file = open('OUTPUT.txt', 'w')
 the_file.write(string)
+test.TEST.echo()
