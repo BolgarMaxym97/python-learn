@@ -1,15 +1,11 @@
-import test
+f = open('INPUT.txt', 'r')
+arr = [x.strip() for x in f.readlines()]
+threeCount = 0
+fourCount = 0
+three = [item for item in arr[1].split() if int(item) % 2 != 0]
+four = [item for item in arr[1].split() if int(item) % 2 == 0]
 
-f = int(open('INPUT.txt', 'r').read())
-string = ''
-sumAllNumbers = 0
-if 0 < f <= 10**4:
-    for x in range(1, f + 1):
-        sumAllNumbers += x
-
-if sumAllNumbers > 0:
-    string = str(sumAllNumbers)
-
-the_file = open('OUTPUT.txt', 'w')
-the_file.write(string)
-test.TEST.echo()
+file = open('OUTPUT.txt', 'w')
+file.write(' '.join(three) + '\n')
+file.write(' '.join(four) + '\n')
+file.write('YES' if len(four) > len(three) else 'NO')
